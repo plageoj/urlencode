@@ -2,9 +2,10 @@
 
 A simple library for URL encoding on Arduino framework.
 
-## Installation
-
-You can find the library on Arduino Library Manager.
-
 ## Usage
 
+```cpp
+#include <UrlEncode.h>
+
+String encoded = urlEncode("http://example.com/path/to/file.html?param=value&param2=value2");
+```
