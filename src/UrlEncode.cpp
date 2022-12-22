@@ -1,6 +1,6 @@
-#include <Arduino.h>
+#include "UrlEncode.h"
 
-String urlEncode(const unsigned char *msg) {
+String urlEncode(const char *msg) {
   const char *hex = "0123456789ABCDEF";
   String encodedMsg = "";
 
@@ -10,10 +10,14 @@ String urlEncode(const unsigned char *msg) {
       encodedMsg += *msg;
     } else {
       encodedMsg += '%';
-      encodedMsg += hex[*msg >> 4];
+      encodedMsg += hex[(unsigned char)*msg >> 4];
       encodedMsg += hex[*msg & 0xf];
     }
     msg++;
   }
   return encodedMsg;
+}
+
+String urlEncode(String msg) {
+  return urlEncode(msg.c_str());
 }

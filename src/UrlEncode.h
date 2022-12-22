@@ -8,9 +8,13 @@
  * @param msg UTF-8 string to encode.
  * @returns Percent-encoded string.
  */
-String urlEncode(const unsigned char *msg);
-String urlEncode(String msg) {
-  return urlEncode(msg.c_str());
-}
+String urlEncode(const char *msg);
+
+/**
+ * Percent-encodes a string.
+ * @param msg UTF-8 string to encode.
+ * @returns Percent-encoded string.
+ */
+String urlEncode(String msg);
 
 #endif
